@@ -57,7 +57,7 @@
           
            <div class="col">
     <h2>회원가입</h2>
-    <form id="frmJoin" action="joinOk" method="post">
+    <form id="frmJoin" action="join" method="post">
         <table class="table table-boardered">
             <tr>
                 <th>아이디</th>

@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where mem_id = #{mem_id}
 	</select> 
 	
-	<!-- 로그인(MemberDTO 가져옴) 비번을 파라미터 사용안하고 있음에 주의 -->
+	<!-- 로그인(MemberDTO) -->
 	<select id="login" parameterType="MemberDTO" resultType="MemberDTO">
 		select mem_id, mem_pw, mem_nick, mem_name, mem_point, mem_date_last
 		from member_tbl

@@ -6,6 +6,8 @@
 
 	<typeAliases>
 		<package name="com.docmall.domain"/>
+		<package name="com.docmall.dto"/>
+	
 	</typeAliases>
 	
 </configuration>
