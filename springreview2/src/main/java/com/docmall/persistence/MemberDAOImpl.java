@@ -14,7 +14,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Autowired
 	private SqlSession session;
-	public final static String NS = "com.demo.mappers.MemberMapper";
+	public final static String NS = "com.docmall.mappers.MemberMapper";
 	
 	// memberVO 가져오기
 	@Override

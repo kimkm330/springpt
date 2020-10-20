@@ -24,13 +24,17 @@
 	<resources mapping="/vendor/**" location="/WEB-INF/views/vendor/" />
 	
 	<resources mapping="/js/**" location="/WEB-INF/views/js/" />
+	
+
+
+		
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
+	 
 	<!-- MultipartFile file 주입됨 -->
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -41,20 +45,19 @@
 	<beans:bean id="uploadPath" class="java.lang.String">
 		<beans:constructor-arg value="D:\\dev\\upload"></beans:constructor-arg>
 	</beans:bean>
+	
 
 
-
-
 	<context:component-scan
-		base-package="com.demo.controller" />
+		base-package="com.docmall.controller" />
 	<context:component-scan
-		base-package="com.demo.dao" />
+		base-package="com.docmall.dao" />
 	<context:component-scan
-		base-package="com.demo.domain" />
+		base-package="com.docmall.domain" />
 	<context:component-scan
-		base-package="com.demo.dto" />
+		base-package="com.docmall.dto" />
 	<context:component-scan
-		base-package="com.demo.service" />
+		base-package="com.docmall.service" />
 	
 	
 	

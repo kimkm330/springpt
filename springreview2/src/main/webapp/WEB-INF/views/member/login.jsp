@@ -74,13 +74,13 @@
            <div class="col">
     
     		<div class="login-form">
-			    <form action="/examples/actions/confirmation.php" method="post">
+			    <form action="loginPost" method="post">
 			        <h2 class="text-center">Log in</h2>       
 			        <div class="form-group">
-			            <input type="text" class="form-control" placeholder="Username" required="required">
+			            <input type="text" id="mem_id" name="mem_id" class="form-control" placeholder="Username" required="required">
 			        </div>
 			        <div class="form-group">
-			            <input type="password" class="form-control" placeholder="Password" required="required">
+			            <input type="password" id="mem_pw" name="mem_pw" class="form-control" placeholder="Password" required="required">
 			        </div>
 			        <div class="form-group">
 			            <button type="submit" class="btn btn-primary btn-block">Log in</button>

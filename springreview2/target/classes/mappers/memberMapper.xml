@@ -8,7 +8,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- MemberVO 가져오기 -->
 	<select id="readUserInfo" parameterType="string" resultType="MemberVO">
 		select  mem_id, mem_name, mem_pw, mem_email, mem_zipcode, mem_addr, mem_addr_d, 
-			mem_phone, mem_nick, mem_accept_e, mem_point, 
+			mem_phone, mem_nick, mem_point, 
 			mem_date_sub, mem_date_up, mem_date_last, mem_authcode
 		from member_tbl
 		where mem_id = #{mem_id}
@@ -32,9 +32,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 회원가입 -->
 	<insert id="join" parameterType="MemberVO">
 		insert into member_tbl(mem_id, MEM_NAME, MEM_PW, MEM_EMAIL, MEM_ZIPCODE, 
-			MEM_ADDR, MEM_ADDR_D, MEM_PHONE, MEM_NICK, MEM_ACCEPT_E)
+			MEM_ADDR, MEM_ADDR_D, MEM_PHONE, MEM_NICK)
 		values(#{mem_id}, #{mem_name}, #{mem_pw}, #{mem_email}, #{mem_zipcode},
-			#{mem_addr}, #{mem_addr_d}, #{mem_phone}, #{mem_nick}, #{mem_accept_e})
+			#{mem_addr}, #{mem_addr_d}, #{mem_phone}, #{mem_nick})
 	</insert>
 
 	<!-- 아이디 중복 체크 -->
@@ -49,7 +49,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update member_tbl
 		set mem_name=#{mem_name}, mem_nick=#{mem_nick}, mem_email=#{mem_email},
 			mem_phone=#{mem_phone}, mem_zipcode=#{mem_zipcode}, mem_addr=#{mem_addr}, 
-			mem_addr_d=#{mem_addr_d}, mem_accept_e=#{mem_accept_e}, mem_date_up=sysdate
+			mem_addr_d=#{mem_addr_d}, mem_date_up=sysdate
 		where mem_id=#{mem_id}	
 	</update>
 	
