@@ -17,6 +17,14 @@
   <!-- Custom styles for this template -->
 <%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
   
+  
+  <script type="text/javascript" src="/js/login.js"></script>
+<script>
+	if("${msg}"=="LOGIN_FAIL"){	
+		alert("로그인에 실패하였습니다.\n아이디와 비밀번호를 다시 확인해주세요.");
+	}
+</script>
+
   <style>
 .login-form {
     width: 340px;

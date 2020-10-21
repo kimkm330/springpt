@@ -18,8 +18,7 @@
 <%@ include file="/WEB-INF/views/common/bootjs.jsp" %>  
 
 
-<!-- 회원가입 유효성 검사 -->
-<script src="/js/join.js"></script>
+<script type="text/javascript" src="/js/member/modify.js"></script>
 
 
   <!-- Custom styles for this template -->

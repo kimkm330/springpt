@@ -18,8 +18,7 @@
 <%@ include file="/WEB-INF/views/common/bootjs.jsp" %>  
 
 
-<!-- 회원가입 유효성 검사 -->
-<script src="/js/join.js"></script>
+<script type="text/javascript" src="/js/changePw.js"></script>
 
 
   <!-- Custom styles for this template -->
@@ -51,7 +50,7 @@
 		<!-- main-carousel end -->
 		
 		<div style="background-color: white; width:80%; padding: 5% 5%;">
-					<form id="changePwForm" method="post" action="/member/changePw">
+					<form id="changePwForm" method="post" action="changePw">
 						<div class="form-group">
 							<input type= "hidden" name="mem_id" value="${sessionScope.user.mem_id}" />
 							
