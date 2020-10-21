@@ -57,21 +57,13 @@
           
            <div class="col">
     <h2>회원정보 수정</h2>
-    <form id="frmJoin" action="joinOk" method="post">
+    <form id="frmJoin" action="modify" method="post">
         <table class="table table-boardered">
             <tr>
                 <th>아이디</th>
                 <td><input type="text" class="form-control" id="mem_id" name="mem_id" placeholder="id를 넣으세요"></td>        
             </tr>
-            <tr>
-                <th>패스워드</th>
-                <td><input type="password" class="form-control" id="mem_pw" name="mem_pw" placeholder="비밀번호는 영문만 넣어주세요"></td>      
-            </tr>
-             
-            <tr>
-                <th>패스워드확인</th>
-                <td><input type="password" class="form-control" id="mem_pw_check" name="pass2"></td>        
-            </tr>
+            
             
             <tr>
                 <th>이름</th>

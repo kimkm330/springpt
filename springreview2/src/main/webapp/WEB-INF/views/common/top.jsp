@@ -9,22 +9,22 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="/">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/member/join">회원가입</a>
-            <a class="nav-link" href="#">회원수정</a>
+            <a class="nav-link" href="/member/checkPw?url=modify">회원수정</a>
           </li>
           
           <li class="nav-item">
             <a class="nav-link" href="/member/login">로그인</a>
-            <a class="nav-link" href="#">로그아웃</a>
+            <a class="nav-link" href="/member/logout">로그아웃</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/member/delete">회원탈퇴</a>
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="/member/checkPw?url=delete">회원탈퇴</a>
+            <a class="nav-link" href="/member/checkPw?url=changePw">비밀번호변경</a>
           </li>
         </ul>
       </div>
