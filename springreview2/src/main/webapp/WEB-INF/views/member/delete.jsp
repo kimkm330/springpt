@@ -19,7 +19,7 @@
 
 
 <!-- 회원가입 유효성 검사 -->
-<script src="/js/join.js"></script>
+<script src="/js/delete.js"></script>
 
 
   <!-- Custom styles for this template -->
@@ -51,7 +51,7 @@
 		<!-- main-carousel end -->
 		
 		<div style="background-color: white; width:80%; padding: 5% 5%;">
-					<form id="deleteForm" method="post" action="/member/delete">
+					<form id="deleteForm" method="post" action="delete">
 						<div class="form-group">
 							<input type="hidden" name="mem_id" value="${sessionScope.user.mem_id}" />
 							회원 탈퇴 하시겠습니까?

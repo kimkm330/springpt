@@ -18,12 +18,12 @@
 <%@ include file="/WEB-INF/views/common/bootjs.jsp" %>  
 
 
-<script type="text/javascript" src="/js/member/modify.js"></script>
 
 
   <!-- Custom styles for this template -->
 <%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
   
+<script type="text/javascript" src="/js/modify.js"></script>
 
 </head>
 
@@ -56,7 +56,7 @@
           
            <div class="col">
     <h2>회원정보 수정</h2>
-    <form id="frmJoin" action="modify" method="post">
+    <form id="modifyForm" action="modify" method="post">
         <table class="table table-boardered">
             <tr>
                 <th>아이디</th>
@@ -112,7 +112,7 @@
              
             <tr>
                 <td colspan="2" class="text-center">
-                <input type="button" id="btnJoin" class="btn btn-primary" value="전송">
+                <input type="button" id="btn_modify" class="btn btn-primary" value="전송">
                 <input type="button" id="btn_cancle" class="btn btn-danger" value="취소">
                 </td>
             </tr>

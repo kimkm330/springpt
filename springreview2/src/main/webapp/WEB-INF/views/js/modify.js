@@ -4,11 +4,9 @@ $(document).ready(function() {
 
 	
 	/* 회원수정 버튼 클릭 시 */ 
-	$("#btn_submit").on("click", function(){
+	$("#btn_modify").on("click", function(){
 		
 		var mem_id = $("#mem_id");
-		var mem_pw = $("#mem_pw");
-		var mem_pw_check = $("#mem_pw_check");
 		var mem_name = $("#mem_name");
 		var mem_nick = $("#mem_nick");
 		var mem_email = $("#mem_email");
@@ -19,11 +17,10 @@ $(document).ready(function() {
 		var mem_addr_d = $("input[name='mem_addr_d']");
 		
 		/* 유효성 검사 */
-		 if(mem_pw.val()==null || mem_pw.val()==""){
-			alert("현재 비밀번호를 입력해주세요.");
-			mem_pw.focus();
-			return;
-			
+		 if(mem_id.val()==null || mem_id.val()==""){
+			alert("아이디를 입력해주세요");
+			mem_id.focus();
+
 		} else if(mem_name.val()==null || mem_name.val()==""){
 			alert("이름을 입력해주세요.");
 			mem_name.focus();
@@ -39,17 +36,6 @@ $(document).ready(function() {
 			mem_email.focus();
 			return;
 
-		} else if(isCheckEmail=="false" && 
-					(mem_authcode.val()==null || mem_authcode.val()=="")){
-			alert("이메일 인증 확인 후 인증 코드를 입력해주세요.");
-			mem_authcode.focus();
-			return;
-
-		} else if(isCheckEmail=="false"){
-			alert("이메일인증을 해주세요.");
-			$("#btn_sendAuthCode").focus();
-			return;
-		
 		} else if(mem_phone.val()==null || mem_phone.val()==""){
 			alert("휴대폰 번호를 입력해주세요.");
 			mem_phone.focus();
@@ -62,15 +48,16 @@ $(document).ready(function() {
 			
 		} else if(mem_addr.val()==null || mem_addr.val()==""){
 			alert("주소를 입력해주세요.");
-			$("#btn_postCode").focus();
+			mem_addr.focus();
 			return;
 			
 		} else if(mem_addr_d.val()==null || mem_addr_d.val()==""){
 			alert("상세 주소를 입력해주세요.");
 			mem_addr_d.focus();
 			return;
-		} 
-		 
+		} else {
+			form.submit();
+		}		 
 		
 	});
 	

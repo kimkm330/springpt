@@ -238,6 +238,8 @@ public class MemberController {
 	@RequestMapping(value="modify", method=RequestMethod.POST)
 	public String modifyPOST(MemberVO vo, RedirectAttributes rttr, HttpSession session) throws Exception {
 
+		logger.info("=====modifyPOST() execute...");
+		
 		MemberDTO dto = new MemberDTO();
 		dto.setMem_id(vo.getMem_id());
 		dto.setMem_pw(vo.getMem_pw());

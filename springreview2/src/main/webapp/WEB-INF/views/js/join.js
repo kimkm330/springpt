@@ -63,7 +63,7 @@ $(document).ready(function() {
 			
 		} else if(mem_addr.val()==null || mem_addr.val()==""){
 			alert("주소를 입력해주세요.");
-			$("#btn_postCode").focus();
+			mem_addr.focus();
 			
 		} else if(mem_addr_d.val()==null || mem_addr_d.val()==""){
 			alert("상세 주소를 입력해주세요.");
