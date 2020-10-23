@@ -242,15 +242,12 @@ public class MemberController {
 		
 		MemberDTO dto = new MemberDTO();
 		dto.setMem_id(vo.getMem_id());
-		dto.setMem_pw(vo.getMem_pw());
 		
-		// 비밀번호 암호화작업
-		vo.setMem_pw(passwdEncrypt.encode(vo.getMem_pw()));
 		service.modifyUserInfo(vo); // 회원수정
 		
 
 		// 세션작업. 수정중에서 변경된 정보를 갱신.
-		session.setAttribute("user", service.login(dto));
+		session.setAttribute("user", dto);
 		
 		rttr.addFlashAttribute("msg", "MODIFY_USER_SUCCESS");
 		

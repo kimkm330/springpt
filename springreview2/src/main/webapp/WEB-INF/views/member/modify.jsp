@@ -100,7 +100,6 @@
                 </td>       
             </tr>
             
-             
             <tr>
                 <th>전화번호</th>
                 <td><input type="tel" class="form-control" id="mem_phone" name="mem_phone"></td>       
