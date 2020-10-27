@@ -3,7 +3,7 @@
 
 <h1 class="my-4">Shop Name</h1>
    <div class="list-group">
-     <a href="#" class="list-group-item">Category 1</a>
+     <a href="/board/listPage" class="list-group-item">리뷰</a>
      <a href="#" class="list-group-item">Category 2</a>
      <a href="#" class="list-group-item">Category 3</a>
    </div>

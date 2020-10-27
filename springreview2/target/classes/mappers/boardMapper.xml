@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.docmall.mapper.BoardMapper">
+
+	<insert id="create" parameterType="BoardVO">
+	insert into BOARD_TB(BNO, TITLE, BD_CONTENT, WRITER )
+	values(seq_board_bno.nextval, #{title}, #{BD_CONTENT},#{writer})
+	</insert>
+	<!-- 읽기,수정페이지 -->
+	<select id="read" resultType="BoardVO">
+	select BNO, TITLE, BD_CONTENT, WRITER, REGDATE, VIEWCNT from BOARD_TB
+	where bno = #{bno}
+	</select>
+	
+	<select id="listAll" resultType="BoardVO">
+	select BNO, TITLE, BD_CONTENT, WRITER, REGDATE, VIEWCNT
+from BOARD_TB order by REGDATE desc
+	</select>
+	
+	<update id="update" parameterType="BoardVO">
+	update BOARD_TB set title = #{title}, BD_CONTENT = #{BD_CONTENT}
+	where BNO = #{bno}
+	</update>
+	
+	<delete id="delete">
+	delete from BOARD_TB where bno = #{bno}
+	</delete>
+	
+	<update id="viwecnt">
+	update BOARD_TB
+	set VIEWCNT =  VIEWCNT + 1
+	where bno = #{bno}
+	</update>
+	
+	
+	
+	<!-- 서치 조건문 -->
+	<sql id="search">
+		 
+		 <if test="searchType != null" > 
+			   <if test="searchType == 't'.toString()">				<!-- 제목 -->
+			     where TITLE like '%' || #{keyword} || '%'
+			   </if>
+			   <if test="searchType == 'w'.toString()">				<!-- 작성자 -->
+			     where WRITER like '%' || #{keyword} || '%'
+			   </if>
+			   <if test="searchType == 'c'.toString()">
+			     where BD_CONTENT like '%' || #{keyword} || '%'
+			   </if>     
+			   <if test="searchType == 'tw'.toString()">			<!-- 제목or작성자 -->
+			     where (TITLE like '%' || #{keyword} || '%') OR (WRITER like '%' || #{keyword} || '%')
+			   </if>        
+		 </if>  
+	</sql>
+	
+	<!-- 목록 검색기능 -->
+	<select id="listSearch" parameterType="SearchCriteria" resultType="BoardVO">
+	SELECT BNO, TITLE, BD_CONTENT, WRITER, REGDATE, VIEWCNT 
+	FROM (SELECT BNO, TITLE, BD_CONTENT, WRITER, REGDATE, VIEWCNT
+	    , ROW_NUMBER() OVER(ORDER BY BNO DESC) AS B_SEQ
+	FROM BOARD_TB
+	
+	<include refid="search"></include>
+	
+	) DS
+	WHERE B_SEQ BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	
+	
+
+	<!-- 목록 검색 카운트 기능 -->  
+	<select id="listSearchCount" resultType="int">
+		<![CDATA[  
+		select count(BNO) 
+		from BOARD_TB 
+		]]>
+		<include refid="search"></include>
+	</select>
+
+</mapper>  

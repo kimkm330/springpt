@@ -58,6 +58,9 @@
 		base-package="com.docmall.dto" />
 	<context:component-scan
 		base-package="com.docmall.service" />
+	<context:component-scan
+		base-package="com.docmall.util" />
+
 	
 	
 	

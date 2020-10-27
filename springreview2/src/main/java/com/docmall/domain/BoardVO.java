@@ -1,75 +1,57 @@
 package com.docmall.domain;
 
-import java.util.Arrays;
 import java.util.Date;
 
 public class BoardVO {
+// BNO, TITLE, CONTENT, WRITER, REGDATE, VIEWCNT
+	private Integer		bno;
+	private String		title;
+	private	String		bd_content;
+	private	String		writer;
+	private	Date		regdate;
+	private	int			viewcnt;
 	
-	private Integer BD_NUM;
-	private String BD_TITLE;
-	private String BD_CONTENT;
-	private String BD_WRITER;
-	private Date BD_DATE;
-	private int BD_VIEWCNT;
-	private int BD_REPLYCNT;
-	
-	private String[] files;
-	
-		
-	public String[] getFiles() {
-		return files;
+	public Integer getBno() {
+		return bno;
 	}
-	public void setFiles(String[] files) {
-		this.files = files;
+	public void setBno(Integer bno) {
+		this.bno = bno;
 	}
-	public int getBD_REPLYCNT() {
-		return BD_REPLYCNT;
+	public String getTitle() {
+		return title;
 	}
-	public void setBD_REPLYCNT(int BD_REPLYCNT) {
-		this.BD_REPLYCNT = BD_REPLYCNT;
-	}
-	public Integer getBD_NUM() {
-		return BD_NUM;
-	}
-	public void setBD_NUM(Integer BD_NUM) {
-		this.BD_NUM = BD_NUM;
-	}
-	public String getBD_TITLE() {
-		return BD_TITLE;
-	}
-	public void setBD_TITLE(String BD_TITLE) {
-		this.BD_TITLE = BD_TITLE;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getBD_CONTENT() {
-		return BD_CONTENT;
+		return bd_content;
 	}
-	public void setBD_CONTENT(String BD_CONTENT) {
-		this.BD_CONTENT = BD_CONTENT;
+	public void setBD_CONTENT(String content) {
+		this.bd_content = content;
 	}
-	public String getBD_WRITER() {
-		return BD_WRITER;
+	public String getWriter() {
+		return writer;
 	}
-	public void setBD_WRITER(String BD_WRITER) {
-		this.BD_WRITER = BD_WRITER;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
-	public Date getBD_DATE() {
-		return BD_DATE;
+	public Date getRegdate() {
+		return regdate;
 	}
-	public void setBD_DATE(Date BD_DATE) {
-		this.BD_DATE = BD_DATE;
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
-	public int getBD_VIEWCNT() {
-		return BD_VIEWCNT;
+	public int getViewcnt() {
+		return viewcnt;
 	}
-	public void setBD_VIEWCNT(int BD_VIEWCNT) {
-		this.BD_VIEWCNT = BD_VIEWCNT;
+	public void setViewcnt(int viewcnt) {
+		this.viewcnt = viewcnt;
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [BD_NUM=" + BD_NUM + ", BD_TITLE=" + BD_TITLE + ", BD_CONTENT="
-				+ BD_CONTENT + ", BD_WRITER=" + BD_WRITER + ", BD_DATE=" + BD_DATE
-				+ ", BD_VIEWCNT=" + BD_VIEWCNT + ", BD_REPLYCNT=" + BD_REPLYCNT
-				+ ", files=" + Arrays.toString(files) + "]";
+		return "BoardVO [bno=" + bno + ", title=" + title + ", bd_content=" + bd_content + ", writer=" + writer + ", regdate="
+				+ regdate + ", viewcnt=" + viewcnt + "]";
 	}
-
+	
+	
 }
