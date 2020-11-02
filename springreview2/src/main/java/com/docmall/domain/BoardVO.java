@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class BoardVO {
 // BNO, TITLE, CONTENT, WRITER, REGDATE, VIEWCNT
-	private Integer		bno;
+	private int		bno;
 	private String		title;
 	private	String		bd_content;
 	private	String		writer;
 	private	Date		regdate;
 	private	int			viewcnt;
 	
-	public Integer getBno() {
+	public int getBno() {
 		return bno;
 	}
 	public void setBno(Integer bno) {

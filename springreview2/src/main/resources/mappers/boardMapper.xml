@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.docmall.mapper.BoardMapper">
 
 	<insert id="create" parameterType="BoardVO">
-	insert into BOARD_TB(BNO, TITLE, BD_CONTENT, WRITER )
+	insert into BOARD_TB(BNO, TITLE, BD_CONTENT, WRITER)
 	values(seq_board_bno.nextval, #{title}, #{BD_CONTENT},#{writer})
 	</insert>
 	<!-- 읽기,수정페이지 -->
