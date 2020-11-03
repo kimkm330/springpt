@@ -5,6 +5,7 @@ import java.util.Date;
 public class BoardVO {
 // BNO, TITLE, CONTENT, WRITER, REGDATE, VIEWCNT
 	private int		bno;
+	private String 	mem_id;
 	private String		title;
 	private	String		bd_content;
 	private	String		writer;
@@ -26,8 +27,8 @@ public class BoardVO {
 	public String getBD_CONTENT() {
 		return bd_content;
 	}
-	public void setBD_CONTENT(String content) {
-		this.bd_content = content;
+	public void setBD_CONTENT(String bd_content) {
+		this.bd_content = bd_content;
 	}
 	public String getWriter() {
 		return writer;
@@ -51,6 +52,12 @@ public class BoardVO {
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", bd_content=" + bd_content + ", writer=" + writer + ", regdate="
 				+ regdate + ", viewcnt=" + viewcnt + "]";
+	}
+	public String getMem_id() {
+		return mem_id;
+	}
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
 	}
 	
 	

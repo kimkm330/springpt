@@ -36,7 +36,6 @@ public class BoardController {
 		
 		service.create(vo);
 		
-		//return "redirect:/board/listAll";
 		return "redirect:/board/listPage";
 	}
 	

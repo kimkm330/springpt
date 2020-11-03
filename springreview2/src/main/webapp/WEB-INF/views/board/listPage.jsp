@@ -108,11 +108,11 @@
 </c:if>
 </p>
 </div>
-     
     </div>
+     <a href="/board/write"><button class="btn btn-primary">글쓰기</button></a>
     </div>
           
-		<!-- 회원가입 -->
+		
         </div>
         <!-- /.row -->
 

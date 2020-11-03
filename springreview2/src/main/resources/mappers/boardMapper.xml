@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.docmall.mapper.BoardMapper">
 
 	<insert id="create" parameterType="BoardVO">
-	insert into BOARD_TB(BNO, TITLE, BD_CONTENT, WRITER)
-	values(seq_board_bno.nextval, #{title}, #{BD_CONTENT},#{writer})
+	insert into BOARD_TB(BNO, mem_id, TITLE, BD_CONTENT, WRITER)
+	values(seq_board_bno.nextval, #{mem_id}, #{title}, #{bd_content}, #{writer})
 	</insert>
 	<!-- 읽기,수정페이지 -->
 	<select id="read" resultType="BoardVO">
@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="listAll" resultType="BoardVO">
 	select BNO, TITLE, BD_CONTENT, WRITER, REGDATE, VIEWCNT
-from BOARD_TB order by REGDATE desc
+	from BOARD_TB order by REGDATE desc
 	</select>
 	
 	<update id="update" parameterType="BoardVO">

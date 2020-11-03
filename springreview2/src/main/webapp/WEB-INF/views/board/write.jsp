@@ -68,7 +68,7 @@
 <td><input type="text" name="writer"></td>
 </tr>
 <tr>
-<td colspan="2" class="text-center"><button type="submit" class="btn btn-primary">글쓰기</button></td>
+<td colspan="2" class="text-center"><button type="submit" class="btn btn-primary">완료</button></td>
 </tr>
 </table>
 </form>
