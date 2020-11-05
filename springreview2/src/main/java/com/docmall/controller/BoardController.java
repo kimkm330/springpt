@@ -1,6 +1,7 @@
 package com.docmall.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.docmall.dto.MemberDTO;
 import com.docmall.domain.BoardVO;
 import com.docmall.util.PageMaker;
 import com.docmall.util.SearchCriteria;
@@ -30,8 +32,12 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/writeaction", method = RequestMethod.POST)
-	public String writeAction(BoardVO vo) throws Exception {
+	public String writeAction(BoardVO vo, HttpSession session) throws Exception {
 		
+		MemberDTO dto = (MemberDTO) session.getAttribute("user");
+		
+		vo.setMem_id(dto.getMem_id());
+		//vo.setBD_CONTENT("gfuyh");
 		logger.info(vo.toString());
 		
 		service.create(vo);

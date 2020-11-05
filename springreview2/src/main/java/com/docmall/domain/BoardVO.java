@@ -7,7 +7,7 @@ public class BoardVO {
 	private int		bno;
 	private String 	mem_id;
 	private String		title;
-	private	String		bd_content;
+	private	String		content;
 	private	String		writer;
 	private	Date		regdate;
 	private	int			viewcnt;
@@ -24,11 +24,11 @@ public class BoardVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getBD_CONTENT() {
-		return bd_content;
+	public String getContent() {
+		return content;
 	}
-	public void setBD_CONTENT(String bd_content) {
-		this.bd_content = bd_content;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public String getWriter() {
 		return writer;
@@ -50,7 +50,7 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [bno=" + bno + ", title=" + title + ", bd_content=" + bd_content + ", writer=" + writer + ", regdate="
+		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="
 				+ regdate + ", viewcnt=" + viewcnt + "]";
 	}
 	public String getMem_id() {

@@ -72,6 +72,7 @@
 	</select>
 	<input type="text" name="keyword" value="${cri.keyword }" />
 <button type="submit" id="btnSearch">검색</button>
+
 </form> 
 <table class="table table-boardered">
 	<tr>
@@ -107,9 +108,9 @@
 	<span><a href="${pageMaker.makeSearch(pageMaker.endPage +1) }">[다음]</a></span>
 </c:if>
 </p>
+     <a href="/board/write"><button class="btn btn-primary">글쓰기</button></a>
 </div>
     </div>
-     <a href="/board/write"><button class="btn btn-primary">글쓰기</button></a>
     </div>
           
 		

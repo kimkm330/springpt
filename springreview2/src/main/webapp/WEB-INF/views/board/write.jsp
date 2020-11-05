@@ -57,15 +57,15 @@
 <table class="table table-boardered">
 <tr>
 <th>제목</th>
-<td><input type="text" name="title" class="form-control"></td>
+<td><input type="text" name="title" id="title" class="form-control"></td>
 </tr>
 <tr>
 <th>내용</th>
-<td><textarea rows="10" cols="20" name="bd_content" class="form-control"></textarea></td>
+<td><textarea rows="10" cols="20" name="content" id="content" class="form-control"></textarea></td>
 </tr>
 <tr>
 <th>작성자</th>
-<td><input type="text" name="writer"></td>
+<td><input type="text" name="writer" id="writer"></td>
 </tr>
 <tr>
 <td colspan="2" class="text-center"><button type="submit" class="btn btn-primary">완료</button></td>
