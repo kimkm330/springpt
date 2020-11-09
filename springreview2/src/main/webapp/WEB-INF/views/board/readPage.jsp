@@ -91,9 +91,7 @@
 
 <tr>
 <th>내용</th>
-<td><textarea rows="10" cols="50" readonly="readonly" class="form-control">
-	${boardVO.content }
-	</textarea></td>
+<td><textarea rows="10" cols="50" readonly="readonly" class="form-control">${boardVO.bd_content }</textarea></td>
 </tr>
 <tr>
 <th>작성자</th>
@@ -102,8 +100,10 @@
 
 <tr>
 <td colspan="2" class="text-center">
+<c:if test="${sessionScope.user != null}"> 
 <button type="submit" id="btnModify" class="btn btn-primary">수정하기</button>
 <button type="submit" id="btnDel" class="btn btn-primary">삭제하기</button>
+</c:if>
 <button type="submit" id="btnListAll" class="btn btn-primary">리스트(목록)</button>
 </td>
 </tr>

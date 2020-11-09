@@ -14,12 +14,8 @@
 
   <title>Boardlist</title>
 
-  <!-- Bootstrap core CSS -->
- <!-- Bootstrap core JavaScript -->
 <%@ include file="/WEB-INF/views/common/bootjs.jsp" %>  
 
-
-  <!-- Custom styles for this template -->
 <%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
   
 
@@ -35,25 +31,19 @@
 </head>
 
 <body>
-<!-- Navigation -->
   <%@ include file="/WEB-INF/views/common/top.jsp" %>
 
-  <!-- Page Content -->
   <div class="container">
 
     <div class="row">
-	<!-- 카테고리 메뉴 -->
       <div class="col-lg-3">
 
         <%@ include file="/WEB-INF/views/common/category.jsp" %>
 
       </div>
-      <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-		<!-- main-carousel begin  -->
         <%@ include file="/WEB-INF/views/common/carousel.jsp" %>
-		<!-- main-carousel end -->
 		
 		
         <div class="row">
@@ -112,21 +102,8 @@
 </div>
     </div>
     </div>
-          
-		
         </div>
-        <!-- /.row -->
-
       </div>
-      <!-- /.col-lg-9 -->
-
-    
-    <!-- /.row -->
-
-  
-  <!-- /.container -->
-
-  <!-- Footer -->
   <%@ include file="/WEB-INF/views/common/bottom.jsp" %>
 
 </body>

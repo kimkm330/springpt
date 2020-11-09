@@ -61,7 +61,7 @@
 </tr>
 <tr>
 <th>내용</th>
-<td><textarea rows="10" cols="50" name="content">${boardVO.content }</textarea></td>
+<td><textarea rows="10" cols="50" name="bd_content">${boardVO.bd_content }</textarea></td>
 </tr>
 <tr>
 <th>작성자</th>

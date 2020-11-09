@@ -87,9 +87,11 @@ public class BoardController {
 	@RequestMapping(value = "/readPage", method = RequestMethod.GET)
 	public void read(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		
-		logger.info("read...");
+		
 		
 		service.viewIncrement(bno);
+		
+		logger.info("read..." + service.read(bno));
 		
 		model.addAttribute("boardVO", service.read(bno));
 		

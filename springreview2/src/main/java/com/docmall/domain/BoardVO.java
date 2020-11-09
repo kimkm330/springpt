@@ -3,11 +3,11 @@ package com.docmall.domain;
 import java.util.Date;
 
 public class BoardVO {
-// BNO, TITLE, CONTENT, WRITER, REGDATE, VIEWCNT
+// BNO, TITLE, bd_content, WRITER, REGDATE, VIEWCNT
 	private int		bno;
 	private String 	mem_id;
 	private String		title;
-	private	String		content;
+	private	String		bd_content;
 	private	String		writer;
 	private	Date		regdate;
 	private	int			viewcnt;
@@ -24,11 +24,11 @@ public class BoardVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContent() {
-		return content;
+	public String getbd_content() {
+		return bd_content;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setbd_content(String bd_content) {
+		this.bd_content = bd_content;
 	}
 	public String getWriter() {
 		return writer;
@@ -50,7 +50,7 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="
+		return "BoardVO [bno=" + bno + ", title=" + title + ", bd_content=" + bd_content + ", writer=" + writer + ", regdate="
 				+ regdate + ", viewcnt=" + viewcnt + "]";
 	}
 	public String getMem_id() {

@@ -61,7 +61,7 @@
 </tr>
 <tr>
 <th>내용</th>
-<td><textarea rows="10" cols="20" name="content" id="content" class="form-control"></textarea></td>
+<td><textarea rows="10" cols="20" name="bd_content" id="bd_content" class="form-control"></textarea></td>
 </tr>
 <tr>
 <th>작성자</th>
