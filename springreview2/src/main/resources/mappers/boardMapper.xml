@@ -6,17 +6,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.docmall.mapper.BoardMapper">
 
 	<insert id="create" parameterType="BoardVO">
-	insert into BOARD_TB(BNO, mem_id, TITLE, BD_CONTENT, WRITER)
-	values(seq_board_bno.nextval, #{mem_id}, #{title}, #{bd_content}, #{writer})
+	insert into BOARD_TB(BNO, mem_id, TITLE, BD_CONTENT, WRITER, SCORE)
+	values(seq_board_bno.nextval, #{mem_id}, #{title}, #{bd_content}, #{writer}, #{score})
 	</insert>
 	<!-- 읽기,수정페이지 -->
 	<select id="read" resultType="BoardVO">
-	select BNO, TITLE, bd_content, WRITER, REGDATE, VIEWCNT from BOARD_TB
+	select BNO, TITLE, bd_content, WRITER, REGDATE, VIEWCNT, SCORE from BOARD_TB
 	where bno = #{bno}
 	</select>
 	
 	<select id="listAll" resultType="BoardVO">
-	select BNO, TITLE, BD_CONTENT, WRITER, REGDATE, VIEWCNT
+	select BNO, TITLE, BD_CONTENT, WRITER, REGDATE, VIEWCNT, SCORE
 	from BOARD_TB order by REGDATE desc
 	</select>
 	

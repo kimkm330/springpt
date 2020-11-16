@@ -10,6 +10,7 @@ public class BoardVO {
 	private	String		bd_content;
 	private	String		writer;
 	private	Date		regdate;
+	private int 	    score;
 	private	int			viewcnt;
 	
 	public int getBno() {
@@ -58,6 +59,12 @@ public class BoardVO {
 	}
 	public void setMem_id(String mem_id) {
 		this.mem_id = mem_id;
+	}
+	public int getScore() {
+		return score;
+	}
+	public void setScore(int score) {
+		this.score = score;
 	}
 	
 	
