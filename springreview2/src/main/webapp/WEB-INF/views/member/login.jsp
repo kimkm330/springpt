@@ -15,6 +15,8 @@
 
   <!-- Bootstrap core CSS -->
   <!-- Custom styles for this template -->
+  <%@ include file="/WEB-INF/views/common/bootjs.jsp" %>
+  
 <%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
   
   

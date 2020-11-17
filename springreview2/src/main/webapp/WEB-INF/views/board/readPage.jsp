@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ include file="../include/common.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,16 +11,16 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+
+<%@ include file="/WEB-INF/views/common/bootjs.jsp" %>  
+<%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+
   <title>Boardread</title>
 
-  <!-- Bootstrap core CSS -->
- <!-- Bootstrap core JavaScript -->
-<%@ include file="/WEB-INF/views/common/bootjs.jsp" %>  
-
-
-  <!-- Custom styles for this template -->
-<%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
 <script>
+ 
+  
 	$(document).ready(function(){
 		var formObj = $("#form1");
 		
@@ -52,8 +51,29 @@
 			formObj.attr("method", "get");
 			formObj.submit();
 		});
+		
+		// 후기 평점 가져오기
+		var score = ${boardVO.score };
+		$("#star_grade a").each(function(index, item){
+			if(index<score){
+				$(item).addClass('on');
+			} else{
+				$(item).removeClass('on');
+			}
+		});
 	});
 </script>
+<style>
+     #star_grade a{
+     	font-size:22px;
+        text-decoration: none;
+        color: lightgray;
+    }
+    #star_grade a.on{
+        color: black;
+    }
+
+</style>
 </head>
 <body>
   <%@ include file="/WEB-INF/views/common/top.jsp" %>
@@ -92,6 +112,20 @@
 <tr>
 <th>내용</th>
 <td><textarea rows="10" cols="50" readonly="readonly" class="form-control">${boardVO.bd_content }</textarea></td>
+</tr>
+<tr>
+<th>별점</th>
+<td>
+<div class="rating">
+				<p id="star_grade">
+					<a href="#">★</a>
+					<a href="#">★</a>
+					<a href="#">★</a>
+					<a href="#">★</a>
+					<a href="#">★</a>
+				</p>
+</div>
+</td>
 </tr>
 <tr>
 <th>작성자</th>

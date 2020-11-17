@@ -16,7 +16,7 @@ public class Criteria
 	public Criteria() 	// 기본 설정
 	{
 		this.page = 1; // 현재 페이지 번호.
-		this.perPageNum = 2; // 페이지에 출력 게시물 개수
+		this.perPageNum = 10; // 페이지에 출력 게시물 개수
 	}
 
 	public void setPage(int page) 

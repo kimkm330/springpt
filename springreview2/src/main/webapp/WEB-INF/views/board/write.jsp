@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ include file="../include/common.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,18 +11,15 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+<%@ include file="/WEB-INF/views/common/bootjs.jsp" %>  
+<%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
-<script type="text/javascript" src="../js/score.js"></script>
 
   <title>Boardwrite</title>
 
-  <!-- Bootstrap core CSS -->
- <!-- Bootstrap core JavaScript -->
-<%@ include file="/WEB-INF/views/common/bootjs.jsp" %>  
-  <!-- Custom styles for this template -->
-<%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
   
 <script>
+
   Handlebars.registerHelper("checkRating", function(rating) {
 		var stars = "";
 		switch(rating){
@@ -50,21 +46,53 @@
   
   $(document).ready(function(){
 		
-		
+	  var score = 0;
 		 $('#star_grade a').click(function(){
+			 score = 0;
 			 $(this).parent().children("a").removeClass("on");  /* 별점의 on 클래스 전부 제거 */ 
-			 $(this).addClass("on").prevAll("a").addClass("on"); /* 클릭한 별과, 그 앞 까지 별점에 on 클래스 추가 */
+			 $(this).addClass("on").prevAll("a").addClass("on"); /* 클릭한 별과 그 앞 까지 별점에 on 클래스 추가 */
+			 
+			 $("#star_grade a").each(function(i, e){
+					if($(this).attr('class')=='on'){
+					score += 1;
+							}
+					$("#score").val(score);
+						});
 			     return false;
 		 });
-		 
-		// 선택된 별점 개수를 가져옴
-	     $("#star_grade a").each(function(i, e){
-			if($(this).attr('class')=='on'){
-			score += 1;
-					}
-				});
+  
+	$("#btnwrite").on("click", function(){
 		
+		var title = $("#title");
+		var bd_content = $("#bd_content");
+		var writer = $("#writer");
+		var score = $("#score");
+		
+		/* 유효성 검사 */
+		if(title.val()==null || title.val()==""){
+			alert("제목을 입력해주세요");
+			title.focus();
+			return;
+
+		} else if(bd_content.val()==null || bd_content.val()==""){
+			alert("내용을 입력해주세요.");
+			bd_content.focus();
+			return;
+			
+		} else if(writer.val()==null || writer.val()==""){
+			alert("작성자를 입력해주세요.");
+			writer.focus();
+			return;
+		} else if(score.val()==null || score.val()==""){
+			alert("별점을 입력해주세요.");
+			score.focus();
+			return;
+		} 
+		$("#writeform").submit();
+		
+	});
   })
+
 </script>
 <style>
      #star_grade a{
@@ -107,7 +135,7 @@
 		          
            <div class="col">
 <h3>글쓰기 페이지</h3>
-<form method="post" action="writeaction">
+<form method="post" action="writeaction" id="writeform">
 <table class="table table-boardered">
 	<tr>
 		<th>제목</th>
@@ -129,6 +157,7 @@
 					<a href="#">★</a>
 				</p>
 			</div>
+			<input type="hidden" name="score" id="score">
 		</td>
 	</tr>
 	<tr>
@@ -136,7 +165,7 @@
 		<td><input type="text" name="writer" id="writer"></td>
 	</tr>
 	<tr>
-		<td colspan="2" class="text-center"><button type="submit" class="btn btn-primary">완료</button></td>
+		<td colspan="2" class="text-center"><button type="button" class="btn btn-primary" id="btnwrite">완료</button></td>
 	</tr>
 </table>
 </form>

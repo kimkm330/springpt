@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ include file="../include/common.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +20,13 @@
 
 <script>
 	$(document).ready(function(){
-		$("#btnSearch").click(function(){
-			
+		$("#btn_write").click(function(){
+			if(${sessionScope.user == null}){
+				alert("로그인 후에 작성가능합니다.")
+				location.href="/member/login";
+			} else {
+				location.href="/board/write";
+			}		 
 		});
 	});
 
@@ -98,7 +102,7 @@
 	<span><a href="${pageMaker.makeSearch(pageMaker.endPage +1) }">[다음]</a></span>
 </c:if>
 </p>
-     <a href="/board/write"><button class="btn btn-primary">글쓰기</button></a>
+     <button type="button" class="btn btn-primary" id="btn_write">글쓰기</button>
 </div>
     </div>
     </div>
