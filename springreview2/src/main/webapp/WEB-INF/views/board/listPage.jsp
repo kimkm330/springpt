@@ -11,15 +11,17 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+<%@ include file="/WEB-INF/views/common/bootjs.jsp" %>  
+<%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
+
+
   <title>Boardlist</title>
 
-<%@ include file="/WEB-INF/views/common/bootjs.jsp" %>  
-
-<%@ include file="/WEB-INF/views/common/bootcss.jsp" %>
   
 
 <script>
 	$(document).ready(function(){
+		
 		$("#btn_write").click(function(){
 			if(${sessionScope.user == null}){
 				alert("로그인 후에 작성가능합니다.")
@@ -28,6 +30,7 @@
 				location.href="/board/write";
 			}		 
 		});
+		
 	});
 
 </script>
